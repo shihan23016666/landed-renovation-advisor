@@ -184,12 +184,14 @@
       }
     }
 
-    // Chatbot button handler
-    document.getElementById("chatbot-btn").addEventListener("click", (e) => {
-      e.preventDefault();
-      if (window.botpressWebChat) {
-        window.botpressWebChat.sendEvent({ type: "toggle" });
-      }
+    buttons.forEach(btn => {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        const section = btn.dataset.section;
+        if (section) {
+          showSection(section);
+        }
+      });
     });
 
     // Optional: if user clicks logo, go home
