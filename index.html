@@ -109,7 +109,7 @@
 
 .media-item {
   flex: 1;
-  height: 520px; /* DESKTOP height (increase here) */
+  height: 600px; /* DESKTOP height (increase here) */
   overflow: hidden;
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.08);
@@ -132,19 +132,15 @@
       margin-top: 12px;
     }
 
-/* ===== Responsive ===== */
-@media (max-width: 768px) {
-  .hero { padding: 50px 0; }
-  .card { padding: 28px 16px; }
-
-  .media-section {
-    flex-direction: column;
-  }
-
-  .media-item {
-    height: 460px; /* MOBILE height (increase here) */
-  }
-}
+    /* ===== Responsive ===== */
+    @media (max-width: 768px) {
+      .hero { padding: 50px 0; }
+      .card { padding: 28px 16px; }
+      .media-section { flex-direction: column; }
+      .media-item { height: 400px; }
+    }
+  </style>
+</head>
 
 <body>
   <!-- Navbar -->
