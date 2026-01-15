@@ -184,16 +184,6 @@
       }
     }
 
-    buttons.forEach(btn => {
-      btn.addEventListener("click", (e) => {
-        e.preventDefault();
-        const section = btn.dataset.section;
-        if (section) {
-          showSection(section);
-        }
-      });
-    });
-
     // Chatbot button handler
     document.getElementById("chatbot-btn").addEventListener("click", (e) => {
       e.preventDefault();
