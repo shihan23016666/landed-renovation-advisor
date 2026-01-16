@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,15 +11,12 @@
 
   <style>
     /* ===== General Styles ===== */
-    * { box-sizing: border-box; }
-
     body {
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
       background: #f9f9f9;
       color: #333;
-      scroll-behavior: smooth;
     }
 
     a, button { text-decoration: none; cursor: pointer; font-family: inherit; }
@@ -34,206 +30,177 @@
       top: 0;
       z-index: 1000;
     }
+
     .navbar .container {
       max-width: 1100px;
       margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
       padding: 10px 20px;
     }
-    .logo { font-weight: 700; font-size: 1.3rem; color: #333; }
-    .nav-links { list-style: none; display: flex; gap: 12px; margin: 0; padding: 0; }
-    .nav-links .nav-btn {
-      background: none;
-      border: none;
-      font-size: 0.95rem;
-      padding: 8px 12px;
-      border-radius: 6px;
-      transition: 0.2s;
+
+    .logo {
+      font-weight: bold;
+      font-size: 1.3rem;
+      color: #333;
     }
-    .nav-links .nav-btn:hover { background: #eaeaea; }
 
-    /* ===== Sections (important) ===== */
-    .section { display: none; width: 100%; }
-    .section.active { display: block; width: 100%; }
-
-    /* ===== Containers ===== */
-    .page-container {
+    /* ===== Page Container ===== */
+    .container {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 40px 20px;
     }
 
-    /* ===== Hero Section ===== */
-    .hero { padding: 70px 0; text-align: center; }
-    .card {
-      background: #fff;
-      border-radius: 14px;
-      padding: 38px 24px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    /* ===== Welcome (merged) ===== */
+    .welcome {
+      text-align: center;
+      margin-bottom: 50px;
     }
-    .card h1 { font-size: 2rem; margin: 0 0 14px; color: #222; }
-    .card p { font-size: 1rem; line-height: 1.65; color: #444; margin: 0; }
 
-    .spacer { height: 18px; }
+    .welcome h1 {
+      font-size: 2.2rem;
+      margin-bottom: 15px;
+      color: #222;
+    }
 
-    .btn {
-      display: inline-block;
-      background: #2e7d32;
-      color: #fff;
-      border: none;
-      padding: 10px 18px;
+    .welcome p {
       font-size: 1rem;
-      border-radius: 8px;
-      transition: 0.2s;
-      margin-top: 18px;
+      line-height: 1.6;
+      color: #555;
+      max-width: 800px;
+      margin: 0 auto;
     }
-    .btn:hover { background: #256428; }
+
+    /* ===== Hero ===== */
+    .hero {
+      background: #fff;
+      border-radius: 12px;
+      padding: 40px 20px;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      color: #222;
+    }
+
+    .hero p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #444;
+      max-width: 800px;
+      margin: 0 auto;
+    }
 
     /* ===== Info Section ===== */
     .info-section {
-      margin: 42px 0 50px;
       text-align: center;
-    }
-    .info-section h2 { font-size: 1.55rem; margin: 0 0 10px; color: #222; }
-    .info-section p { margin: 0 auto; max-width: 850px; font-size: 1rem; line-height: 1.65; color: #555; }
-
-/* ===== Media Section ===== */
-.media-section {
-  margin: 0 0 70px;
-  display: flex;
-  gap: 20px;
-  align-items: stretch;
-}
-
-.media-item {
-  flex: 1;
-  height: 600px; /* DESKTOP height (increase here) */
-  overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-  background: #000;
-}
-
-.media-item img,
-.media-item video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-
-    /* ===== Small helper note ===== */
-    .note {
-      font-size: 0.9rem;
-      color: #666;
-      margin-top: 12px;
+      margin-bottom: 60px;
     }
 
-/* ===== Responsive ===== */ @media (max-width: 768px) { .hero { padding: 50px 0; } .card { padding: 28px 16px; } .media-section { flex-direction: column; } .media-item { height: 400px; } } </style> </head>
+    .info-section h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      color: #222;
+    }
 
+    .info-section p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #555;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* ===== Media Section ===== */
+    .media-section {
+      display: flex;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .media-item {
+      flex: 1;
+      height: 400px;
+      overflow: hidden;
+      border-radius: 10px;
+      background: #000;
+    }
+
+    .media-item img,
+    .media-item video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 768px) {
+      .media-section { flex-direction: column; }
+      .media-item { height: 260px; }
+    }
+  </style>
+</head>
 
 <body>
+
   <!-- Navbar -->
   <nav class="navbar">
     <div class="container">
-      <a href="#" class="logo" id="logoLink">Interior Design Chatbot Suite</a>
-      <ul class="nav-links">
-        <li><button type="button" class="nav-btn" data-section="welcome">Home</button></li>
-        <li><button type="button" class="nav-btn" data-section="landed">Landed Property Info</button></li>
-      </ul>
+      <div class="logo">Interior Design Chatbot Suite</div>
     </div>
   </nav>
 
-  <!-- Welcome Section -->
-  <section id="welcome" class="section active">
-    <div class="page-container hero">
-      <div class="card">
-        <h1>Welcome to Interior Design Chatbot Suite</h1>
-        <p>Your AI assistant for landed property renovation rules, budget planning, and design inspiration.</p>
-        <button type="button" class="btn" id="goLandedBtn">View Landed Property Info</button>
-      
-      </div>
-    </div>
-  </section>
+  <!-- Main Content -->
+  <main class="container">
 
-  <!-- Landed Property Section -->
-  <section id="landed" class="section">
-    <div class="page-container hero">
-      <div class="card">
-        <h1>Smart Landed Property Renovation Guidance</h1>
-        <p>
-          Accurate renovation advice for landed property. Understand rules, estimate budgets,
-          and plan your design with confidence.
-        </p>
-      </div>
+    <!-- Welcome content (merged) -->
+    <section class="welcome">
+      <h1>Welcome to Interior Design Chatbot Suite</h1>
+      <p>
+        Your AI assistant for landed property renovation rules, budget planning,
+        and interior design inspiration in Singapore.
+      </p>
+    </section>
 
-      <div class="info-section">
-        <h2>Landed Property Renovation Info</h2>
-        <p>
-          Get guidance on renovation rules, budget estimations, and interior design ideas tailored for your landed home.
-        </p>
-      </div>
+    <!-- Landed Property Hero -->
+    <section class="hero">
+      <h2>Smart Landed Property Renovation Guidance</h2>
+      <p>
+        Accurate renovation advice for landed properties. Understand regulations,
+        estimate budgets, and plan your design with confidence before engaging
+        designers or contractors.
+      </p>
+    </section>
 
+    <!-- Info -->
+    <section class="info-section">
+      <h3>Landed Property Renovation Information</h3>
+      <p>
+        Get guidance on renovation rules, A&A works, extension limits, cost
+        expectations, and interior planning tailored specifically for landed homes.
+      </p>
+    </section>
 
-      <div class="media-section">
-        <div class="media-item">
-          <video controls playsinline preload="metadata">
-            <source src="singapore-landed-renovation.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
-
-        <div class="media-item">
-          <img src="interior-design.png" alt="Interior Design Inspiration" />
-        </div>
+    <!-- Media -->
+    <section class="media-section">
+      <div class="media-item">
+        <video controls>
+          <source src="Singapore Landed Renovation.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </div>
 
-      <button type="button" class="btn" id="backHomeBtn">Back to Home</button>
-    </div>
-  </section>
+      <div class="media-item">
+        <img src="Screenshot 2026-01-14 143953.png" alt="Interior Design Inspiration" />
+      </div>
+    </section>
 
-  <!-- NAV BUTTON SCRIPT -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const buttons = document.querySelectorAll(".nav-btn");
-      const sections = document.querySelectorAll(".section");
-      const goLandedBtn = document.getElementById("goLandedBtn");
-      const backHomeBtn = document.getElementById("backHomeBtn");
-      const logoLink = document.getElementById("logoLink");
+  </main>
 
-      function showSection(id) {
-        sections.forEach(sec => sec.classList.remove("active"));
-        const target = document.getElementById(id);
-        if (target) {
-          target.classList.add("active");
-          target.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-      }
-
-      buttons.forEach(btn => {
-        btn.addEventListener("click", (e) => {
-          e.preventDefault();
-          const sectionId = btn.dataset.section;
-          if (sectionId) showSection(sectionId);
-        });
-      });
-
-      if (goLandedBtn) {
-        goLandedBtn.addEventListener("click", () => showSection("landed"));
-      }
-      if (backHomeBtn) {
-        backHomeBtn.addEventListener("click", () => showSection("welcome"));
-      }
-      if (logoLink) {
-        logoLink.addEventListener("click", (e) => {
-          e.preventDefault();
-          showSection("welcome");
-        });
-      }
-    });
-  </script>
 </body>
 </html>
+
+
